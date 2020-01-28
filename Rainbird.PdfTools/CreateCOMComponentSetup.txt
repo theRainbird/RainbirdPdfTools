@@ -1,0 +1,3 @@
+﻿"C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe" "$(TargetPath)" /codebase /tlb:"$(TargetDir)Rainbird.PdfTools.tlb"
+"%WIX%bin\heat.exe" file "$(TargetPath)" -nologo -dr RainbirdPdfTools_DLL -cg ComponentGroupRainbirdPdfTools_DLL -gg -srd -var var.SourceDir -out "$(TargetDir)Rainbird.PdfTools.dll.wxs"
+"%WIX%bin\heat.exe" file "$(TargetDir)Rainbird.PdfTools.tlb" -nologo -dr RainbirdPdfTools_TLB -cg ComponentGroupRainbirdPdfTools_TLB -gg -srd -var var.SourceDir -out "$(TargetDir)Rainbird.PdfTools.tlb.wxs"

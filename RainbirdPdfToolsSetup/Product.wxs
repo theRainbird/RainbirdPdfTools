@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="RainbirdPdfTools" Language="1033" Version="1.0.0.0" Manufacturer="Hagen Siegel" UpgradeCode="14cb0e13-0205-4e40-9a85-2166b82cc359">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="RainbirdPdfTools" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="RainbirdPdfTools" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">			
+			<Component Id="ProductComponent" Guid="{AEB0C770-1A4B-42CF-8C3E-6A9545CFF1B4}">
+        <Class Id="{F52CF46C-B59A-44DE-9076-01800D448528}" Context="InprocServer32" Description="Rainbird.PdfTools.PdfFormFiller" ThreadingModel="both" ForeignServer="mscoree.dll">
+          <ProgId Id="Rainbird.PdfTools.PdfFormFiller" Description="Rainbird.PdfTools.PdfFormFiller" />
+        </Class>
+        <File Id="fil9010613D7230EDA3465F025108822CCC" KeyPath="yes" Source="$(var.Rainbird.PdfTools.TargetPath)" />
+        <RegistryValue Root="HKCR" Key="CLSID\{F52CF46C-B59A-44DE-9076-01800D448528}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{F52CF46C-B59A-44DE-9076-01800D448528}\InprocServer32\1.0.0.0" Name="Class" Value="Rainbird.PdfTools.PdfFormFiller" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{F52CF46C-B59A-44DE-9076-01800D448528}\InprocServer32\1.0.0.0" Name="Assembly" Value="Rainbird.PdfTools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=26f6d2c8043e44ea" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{F52CF46C-B59A-44DE-9076-01800D448528}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v2.0.50727" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{F52CF46C-B59A-44DE-9076-01800D448528}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#fil9010613D7230EDA3465F025108822CCC]" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{F52CF46C-B59A-44DE-9076-01800D448528}\InprocServer32" Name="Class" Value="Rainbird.PdfTools.PdfFormFiller" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{F52CF46C-B59A-44DE-9076-01800D448528}\InprocServer32" Name="Assembly" Value="Rainbird.PdfTools, Version=1.0.0.0, Culture=neutral, PublicKeyToken=26f6d2c8043e44ea" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{F52CF46C-B59A-44DE-9076-01800D448528}\InprocServer32" Name="RuntimeVersion" Value="v2.0.50727" Type="string" Action="write" />
+        <RegistryValue Root="HKCR" Key="CLSID\{F52CF46C-B59A-44DE-9076-01800D448528}\InprocServer32" Name="CodeBase" Value="file:///[#fil9010613D7230EDA3465F025108822CCC]" Type="string" Action="write" />
+			</Component>
+      <Component Id="cmpC1D72CD41D4225BC90635935A26B1337" Guid="{19432C32-4602-49E0-B366-5C69A0132AD5}">
+        <File Id="fil9FF1FCD8D12D08FC9C0407AC716AC928" KeyPath="yes" Source="..\Rainbird.PdfTools\bin\$(var.Configuration)\Rainbird.PdfTools.tlb">
+          <TypeLib Id="{B0D11456-BF82-4B4D-B7E3-AAABBF00622D}" Description="Rainbird_PdfTools" Language="0" MajorVersion="1" MinorVersion="0">
+            <Interface Id="{6C103759-A4C4-3D7C-B3C4-2FD71C9290DA}" Name="_PdfFormFiller" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+            <Interface Id="{7F871551-A12A-497B-B822-9EEAFE1A4615}" Name="IPdfFormFiller" ProxyStubClassId32="{00020424-0000-0000-C000-000000000046}" />
+          </TypeLib>
+        </File>
+      </Component>
+      <Component Id="itextsharp">
+        <File Id="itextsharp.dll" Source="..\Rainbird.PdfTools\bin\$(var.Configuration)\itextsharp.dll" KeyPath="yes"/>
+      </Component>
+    </ComponentGroup>
+	</Fragment>
+</Wix>
