@@ -14,7 +14,7 @@ Usage example for Excel VBA:
 Dim objPdfFormFiller As Rainbird_PdfTools.PdfFormFiller
 Set objPdfFormFiller = New Rainbird_PdfTools.PdfFormFiller
 
-' Load empty template PDF file and specify the path to the filled out destination PDF file, to be created. 
+' Load empty template PDF file and specify the path to the filled out destination PDF file. 
 objPdfFormFiller.LoadPdfDocument "SOURCE.PDF" "DESTINATION.PDF"
 
 ' Set PDF form field value
