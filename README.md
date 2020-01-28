@@ -8,7 +8,8 @@ Dependencies: itextsharp
 
 Usage example from Excel VBA:
 ```
-' Add "Rainbird.PdfTools" as reference to your Excel workbook (menu "Tools" -> "References") in VBA editor.
+' Add "Rainbird.PdfTools" as reference to your Excel workbook 
+' (menu "Tools" -> "References") in VBA editor.
 
 Dim objPdfFormFiller As Rainbird_PdfTools.PdfFormFiller
 Set objPdfFormFiller = New Rainbird_PdfTools.PdfFormFiller
