@@ -1,4 +1,4 @@
-# RainbirdPdfTools
+# Rainbird.PdfTools
 Library to fill PDF form fields from VBA (e.g. Excel, Word) without Acrobat.
 
 Consists of the library code (Rainbird.PdfTools) project and a setup project for easy deployment on client machines via MSI.
