@@ -7,7 +7,7 @@ The setup project is built with WiX ToolSet (https://wixtoolset.org/). You need 
 Dependencies: itextsharp
 
 Usage example from Excel VBA:
-```
+```VB
 ' Add "Rainbird.PdfTools" as reference to your Excel workbook 
 ' (menu "Tools" -> "References") in VBA editor.
 
